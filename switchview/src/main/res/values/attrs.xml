@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SwitchView">
+        <attr name="switch_checked" format="boolean" />
+        <attr name="switch_on_color" format="color" />
+        <attr name="switch_off_color" format="color" />
+        <attr name="switch_circle_color" format="color" />
+        <attr name="switch_circle_r" format="dimension" />
+        <attr name="switch_circle_margin" format="dimension" />
+    </declare-styleable>
+</resources>
