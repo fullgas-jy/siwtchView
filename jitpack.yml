@@ -1,6 +1,13 @@
-before_install:
-  - sdk install java 11.0.10-open
-  - sdk use java 11.0.10-open
+#before_install:
+#  - sdk install java 11.0.10-open
+#  - sdk use java 11.0.10-open
+#
+#jdk:
+#  -openjdk11
+#
 
+before_install:
+  - sdk install 11.0.7.hs-adpt
+  - sdk use 11.0.7.hs-adpt
 jdk:
-  -openjdk11
+  - openjdk11

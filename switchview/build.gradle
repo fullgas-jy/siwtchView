@@ -4,22 +4,7 @@ plugins {
     id 'maven-publish'
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-//                from components.release         // 表示发布 release（jitpack 都不会使用到）
-                groupId = 'com.github.fullgas-jy' // 这个是依赖库的组 id
-                artifactId = 'switchview'       // 依赖库的名称（jitpack 都不会使用到）
-                version = "1.0.10"
-                from components.release
-            }
-        }
-    }
-}
-
 android {
-    namespace 'com.jy.switchview'
     compileSdk 34
 
     defaultConfig {
@@ -38,11 +23,24 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release         // 表示发布 release（jitpack 都不会使用到）
+                groupId = 'com.github.fullgas-jy' // 这个是依赖库的组 id
+                artifactId = 'release'       // 依赖库的名称（jitpack 都不会使用到）
+                version = "1.0.11"
+            }
+        }
     }
 }
 
